@@ -11,10 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('feedback', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
-        });
+            Schema::create('feedbacks', function (Blueprint $table) {
+                $table->id();
+                $table->text('content');
+                $table->boolean('approved')->default(false);
+                $table->timestamps();
+            });
     }
 
     /**
